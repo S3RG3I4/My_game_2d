@@ -11,9 +11,8 @@ icon = pygame.image.load('Изображения/car.png')
 pygame.display.set_icon(icon)
 
 # Параметры экрана
-
-w = 1920
-h = 1080
+w = 1280
+h = 800
 base_resolution = (w, h)
 screen = pygame.display.set_mode(base_resolution)
 
