@@ -31,6 +31,8 @@ def author():
                 return
             elif event.type == pygame.USEREVENT and event.button == telega_button:
                 webbrowser.open_new('https://t.me/Andrewkuzovkov')
+            elif event.type == pygame.USEREVENT and event.button == telega_button:
+                webbrowser.open_new('https://t.me/Andrewkuzovkov')
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     Main.main()
