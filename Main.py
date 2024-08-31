@@ -35,11 +35,11 @@ bg_const = 0
 
 # Выбор машины
 blue_car = pygame.image.load('Изображения/CarBlue.png')
-blue_car = pygame.transform.scale(blue_car, (h//2.5, w//8))
+blue_car = pygame.transform.scale(blue_car, (h // 2.5, w // 8))
 white_car = pygame.image.load('Изображения/CarWhite.png')
-white_car = pygame.transform.scale(white_car, (h//2.5, w//8))
+white_car = pygame.transform.scale(white_car, (h // 2.5, w // 8))
 red_car = pygame.image.load('Изображения/CarRed.png')
-red_car = pygame.transform.scale(red_car, (h//2.5, w//8))
+red_car = pygame.transform.scale(red_car, (h // 2.5, w // 8))
 cars = [blue_car, white_car, red_car]
 car_number = 0
 
@@ -84,12 +84,12 @@ def main():
                 sys.exit()
             elif event.type == pygame.USEREVENT and event.button == play_button:
                 scenes.Play_scene()
-                #return
+                # return
             elif event.type == pygame.USEREVENT and event.button == exit_button:
                 sys.exit()
             elif event.type == pygame.USEREVENT and event.button == author_button:
                 scenes.Author_scene()
-                #return
+                # return
             elif event.type == pygame.USEREVENT and event.button == setting_button:
                 scenes.Game_opt_scene()
                 return
