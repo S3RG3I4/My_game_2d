@@ -83,3 +83,20 @@ class Button3:
             if self.sound:
                 self.sound.play()
             pygame.event.post(pygame.event.Event(pygame.USEREVENT, button=self))
+
+
+class Hero:
+    def __init__(self, window, path_image, wight, height):
+        self.window = window
+        self.image = pygame.transform.scale(pygame.image.load(path_image).convert_alpha(), (wight, height))
+        self.rect = self.image.get_rect(center=(600, 400))
+        self.speed = 1
+
+    def update(self):
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_a] and self.rect.x >= 200:
+            self.rect.x -= self.speed
+        if keys[pygame.K_d] and 982 >= self.rect.x:
+            self.rect.x += self.speed
+
+        self.window.blit(self.image, self.rect)
