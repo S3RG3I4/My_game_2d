@@ -52,6 +52,7 @@ def game_over():
                 play()
             elif event.type == pygame.USEREVENT and event.button == exit_button:
                 Main.main()
+
             for button in buttons:
                 button.handle_event(event)
         Main.screen.blit(bg2, (0, 0))
@@ -73,5 +74,9 @@ def play():
             elif hero.rect.x >= 982 or hero.rect.x <= 200:
                 running = False
                 game_over()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
+                    game_over()
         play_scroll_bg()
         hero.update()
