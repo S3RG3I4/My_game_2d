@@ -21,6 +21,7 @@ create_buttons()
 
 
 def game_opt():
+    global flag
     import sys
     run = True
     while run:
@@ -41,6 +42,7 @@ def game_opt():
                 Main.creat_cars()
                 Play.my_fon((1280, 800))
                 game_opt()
+                flag = 0
                 return
             elif event.type == pygame.USEREVENT and event.button == res2_button:
                 Main.my_screen(1366, 768)
@@ -50,6 +52,7 @@ def game_opt():
                 Main.creat_cars()
                 Play.my_fon((1366, 768))
                 game_opt()
+                flag = 1
                 return
             elif event.type == pygame.USEREVENT and event.button == res3_button:
                 Main.my_screen(1920, 1080)
@@ -59,6 +62,7 @@ def game_opt():
                 Main.creat_cars()
                 Play.my_fon((1920, 1080))
                 game_opt()
+                flag = 2
                 return
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:

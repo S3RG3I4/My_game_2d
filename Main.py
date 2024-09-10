@@ -14,6 +14,7 @@ icon = pygame.image.load('Изображения/car.png')
 pygame.display.set_icon(icon)
 
 
+
 # Параметры экрана
 def my_screen(my_w, my_h):
     global screen, base_resolution, h, w
@@ -117,11 +118,11 @@ creat_buttons()
 
 
 def scroll_bg():
-    global bg_const, h
+    global bg_const, h, w
 
     screen.blit(bg, (0, bg_const - h))
     screen.blit(bg, (0, bg_const))
-    bg_const += 0.5
+    bg_const += (w/(2*w))
     if bg_const == h:
         bg_const = 0
 

@@ -35,6 +35,13 @@ class Button2:
         text_rect = text_surface.get_rect(center=self.rect.center)
         virtual_surface.blit(text_surface, text_rect)
 
+    def draw__medium(self, virtual_surface):
+        font = pygame.font.Font('Fonts/adventureindianajones_regular.ttf', 75)
+        text_surface = font.render(self.text, True, 'red') if self.is_hovered else font.render(self.text,
+                                                                                               True, 'black')
+        text_rect = text_surface.get_rect(center=self.rect.center)
+        virtual_surface.blit(text_surface, text_rect)
+
     def check_hover(self, mouse_pos):
         self.is_hovered = self.rect.collidepoint(mouse_pos)
 
@@ -86,17 +93,19 @@ class Button3:
 
 
 class Hero:
-    def __init__(self, window, image, wight, height):
+    def __init__(self, window, image, wight, height, screen_w, screen_h):
         self.window = window
         self.image = pygame.transform.scale(image.convert_alpha(), (wight, height))
         self.rect = self.image.get_rect(center=(600, 400))
-        self.speed = 1
+        self.speed = screen_w//700
+        self.w = screen_w
+        self.h = screen_h
 
     def update(self):
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_a] and self.rect.x >= 200:
+        if keys[pygame.K_a] and self.rect.x >= self.w//6.4:
             self.rect.x -= self.speed
-        if keys[pygame.K_d] and 982 >= self.rect.x:
+        if keys[pygame.K_d] and self.w//1.31 >= self.rect.x:
             self.rect.x += self.speed
 
         self.window.blit(self.image, self.rect)
