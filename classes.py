@@ -86,9 +86,9 @@ class Button3:
 
 
 class Hero:
-    def __init__(self, window, path_image, wight, height):
+    def __init__(self, window, image, wight, height):
         self.window = window
-        self.image = pygame.transform.scale(pygame.image.load(path_image).convert_alpha(), (wight, height))
+        self.image = pygame.transform.scale(image.convert_alpha(), (wight, height))
         self.rect = self.image.get_rect(center=(600, 400))
         self.speed = 1
 

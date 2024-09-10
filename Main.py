@@ -72,7 +72,7 @@ my_bg()
 
 # Выбор машины
 def creat_cars():
-    global blue_car, white_car, red_car, cars, car_number, w, h
+    global blue_car, white_car, red_car, cars, car_number, w, h, cars_g
 
     blue_car = pygame.image.load('Изображения/CarBlue.png')
     blue_car = pygame.transform.scale(blue_car, (h // 2.5, w // 8))
@@ -80,7 +80,14 @@ def creat_cars():
     white_car = pygame.transform.scale(white_car, (h // 2.5, w // 8))
     red_car = pygame.image.load('Изображения/CarRed.png')
     red_car = pygame.transform.scale(red_car, (h // 2.5, w // 8))
+    blue_car_g = pygame.image.load('Изображения/CarBlue_game.png')
+    blue_car_g = pygame.transform.scale(blue_car_g, (h // 2.5, w // 8))
+    white_car_g = pygame.image.load('Изображения/CarWhite_game.png')
+    white_car_g = pygame.transform.scale(white_car_g, (h // 2.5, w // 8))
+    red_car_g = pygame.image.load('Изображения/CarRed_game.png')
+    red_car_g = pygame.transform.scale(red_car_g, (h // 2.5, w // 8))
     cars = [blue_car, white_car, red_car]
+    cars_g = [blue_car_g, white_car_g, red_car_g]
     car_number = 0
 
 

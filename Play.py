@@ -64,7 +64,7 @@ def game_over():
 def play():
     import sys
     running = True
-    hero = Hero(window=Main.screen, path_image='Изображения/CarRed_game.png', wight=Main.w // 12, height=Main.h // 5)
+    hero = Hero(window=Main.screen, image=Main.cars_g[Main.car_number], wight=Main.w // 12, height=Main.h // 5)
     while running:
         pygame.display.flip()
         for event in pygame.event.get():
