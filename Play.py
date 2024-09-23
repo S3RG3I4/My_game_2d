@@ -9,11 +9,12 @@ import scenes
 pygame.init()
 pygame.mixer.init()
 
-
 bg2 = pygame.image.load('Изображения/моя дорога.png')
 paused = False
 scroll = 0
 tiles = math.ceil(Main.h / bg2.get_height()) + 1
+
+
 def creat_buttons():
     global exit_button, play_button, buttons
     exit_button = classes.Button2(Main.w // 2.3, Main.h // 2, 200, 60, 'Выход', 'Изображения/BTN.png', '',
@@ -26,6 +27,7 @@ def creat_buttons():
 
 creat_buttons()
 
+
 def my_screen(k1):
     global k
     k = k1
@@ -35,25 +37,25 @@ def my_screen(k1):
 def play_scroll_bg():
     global scroll, bg2, k
     i = 0
-    if scenes.Game_opt.flag == 0:
-        while (i < tiles):
-            Main.screen.blit(bg2, (0, Main.h - (bg2.get_height() * i + scroll)))
-            i += 1
-        scroll -= 0.5
-        if abs(scroll) > bg2.get_height():
-            scroll = 0
-    elif scenes.Game_opt.flag == 1:
+    if Main.w == 1280:
         while (i < tiles):
             Main.screen.blit(bg2, (0, Main.h - (bg2.get_height() * i + scroll)))
             i += 1
         scroll -= 0.7
         if abs(scroll) > bg2.get_height():
             scroll = 0
-    elif scenes.Game_opt.flag == 2:
+    if Main.w == 1366:
         while (i < tiles):
             Main.screen.blit(bg2, (0, Main.h - (bg2.get_height() * i + scroll)))
             i += 1
-        scroll -= 10.7
+        scroll -= 0.8
+        if abs(scroll) > bg2.get_height():
+            scroll = 0
+    if Main.w == 1920:
+        while (i < tiles):
+            Main.screen.blit(bg2, (0, Main.h - (bg2.get_height() * i + scroll)))
+            i += 1
+        scroll -= 2
         if abs(scroll) > bg2.get_height():
             scroll = 0
 
